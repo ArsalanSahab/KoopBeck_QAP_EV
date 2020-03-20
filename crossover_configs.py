@@ -44,7 +44,7 @@ class BasicCrossover(object):
 
         crossover_tuples = BasicCrossover.create_crossover_tuples(not_crossovered, to_crossover)
 
-        crossovered_species = BasicCrossover.crossover_population_iter_iter(crossover_tuples)
+        crossovered_species = BasicCrossover.crossover_population_iter(crossover_tuples)
 
         return crossovered_species + not_crossovered
 
