@@ -9,12 +9,18 @@ sys.path.append(os.path.join(os.path.dirname(__file__), ''))
 
 #### CUSTOM IMPORTS ####
 
-from draw_plot import PlotDrawer
+
 from configurations import *
-from src.crossover import BasicCrossover, Crossover
-from src.data_loading import matrices_size, flow_matrix, distance_matrix
-from src.visualization_drawer import CustomDrawer
-from src.fitness_function import get_normalized_result_of_fitness_function_scores_list, compute_fitness_scores_list
-from src.generate_population import generate_random_population
-from src.mutation import Mutation, BasicMutation
+from load_data_set import array_size, flow_array, distance_array
+from population_generator import generate_population
 from src.selection import Selection, TournamentSelection, RouletteSelection
+from crossover_configs import BasicCrossover, Crossover
+from src.mutation import Mutation, BasicMutation
+from src.fitness_function import get_normalized_result_of_fitness_function_scores_list, compute_fitness_scores_list
+from src.visualization_drawer import CustomDrawer
+from draw_plot import PlotDrawer
+
+
+
+
+
