@@ -79,6 +79,7 @@ class TournamentSelection(object):
 
         return self.tournament_selection(population, fitness_score_list)
 
+    # FUNCTION TO INITIATE THE TOURNAMENT SELECTION ALGORITHM
     @staticmethod
     def tournament_selection(population_list, fitness_scores_list, elitism=False):
 
@@ -101,5 +102,5 @@ class TournamentSelection(object):
                 ch_winner = population_list[tf_parent_idx]
 
             new_species.append(ch_winner)
-            
+
         return new_species
