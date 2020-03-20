@@ -17,7 +17,7 @@ from fitness_func_configs import normalise_fitness_scores, get_fitness_scores
 from selection_configs import Selection, TournamentSelection, RouletteSelection
 from crossover_configs import BasicCrossover, Crossover
 from mutation_configs import Mutation, BasicMutation
-from src.visualization_drawer import CustomDrawer
+from turtle_visualisations import CustomDrawer
 from draw_plot import PlotDrawer
 
 
