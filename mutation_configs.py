@@ -27,7 +27,7 @@ class BasicMutation(object):
 
         return self.mutate_population(population)
 
- 
+
     # FUNCTION TO APPLY MUTATION TO WHOLE POPULATION
     @staticmethod
     def mutate_population(population):

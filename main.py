@@ -1,13 +1,7 @@
 """
-NOTE : SOME PARTS OF CODE IN THIS PROJECT HAVE BEEN INSPIRED FROM 
+NOTE : SOME PARTS OF CODE IN THIS PROJECT HAVE BEEN INSPIRED FROM
 "Filip Bachura from Wroclaw University of Science and Technology"
-
 """
-
-
-
-##### IMPORTS PYTHON ####
-
 import sys
 import os.path
 import time
@@ -41,7 +35,7 @@ def main():
     turtle_drawer = CustomDrawer()
     plot_drawer = PlotDrawer()
 
-    generation_indicies = []
+    generation_indices = []
     average_results = []
     min_results = []
     max_results = []
@@ -52,12 +46,11 @@ def main():
         turtle_drawer.draw_main_frame(max_chromosome, gen_count, max_fitness, max_chromosome, flow_array,
                                                    distance_array)
 
-        time.sleep(1)
+        time.sleep(0.3)
 
         return
 
     def terminal_output():
-
         print("Generation_Count: \t\t\t\t{}\nMean fitness.: \t\t\t{}\nMax score: \t\t\t{}\nMax chromosome.: \t\t{}\n\n"
               .format(gen_count, average_fitness, max_fitness, max_chromosome))
 
@@ -66,7 +59,7 @@ def main():
         fitness_scores = get_fitness_scores(population, distance_array, flow_array)
         fitness_scores_normalized = normalise_fitness_scores(fitness_scores)
 
-        # While it's not normalized yet, max means "the worst", therefor "min" for us.
+        # While it's not normalized yet, max means "the worst", therefore "min" for us.
         max_fitness = np.min(fitness_scores)
         min_fitness = np.max(fitness_scores)
         average_fitness = np.mean(fitness_scores)
@@ -74,7 +67,7 @@ def main():
         max_results.append(max_fitness)
         min_results.append(min_fitness)
         average_results.append(average_fitness)
-        generation_indicies.append(gen_count)
+        generation_indices.append(gen_count)
 
         max_chromosome = population[np.argmin(fitness_scores)]
         max_chromosome = list(map(lambda value: value + 1, max_chromosome))
@@ -92,8 +85,7 @@ def main():
         population = mutated_chromosomes
 
     if DRAW_GRAPH:
-
-        plot_drawer.drawPlot(DATA_SET, generation_indicies, average_results, max_results, min_results)
+        plot_drawer.drawPlot(DATA_SET, generation_indices, average_results, max_results, min_results)
 
     turtle_drawer.screen.mainloop()
 

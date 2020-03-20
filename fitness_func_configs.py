@@ -2,7 +2,6 @@
 #### PYTHON IMPORTS ####
 import numpy as np
 
-
 # FUNCTION TO COMPUTE THE FITNESS SCORES
 def get_fitness_scores(population, distance_array, flow_array):
 
@@ -25,7 +24,7 @@ def get_fitness_scores(population, distance_array, flow_array):
 
     return fitness_scores
 
-# FUNCTION TO NORMALISE FOTNESS SCORES (SOME PART OF CODE TAKEN FROM INTERNET NUMPY DOCUMENTATION)
+# FUNCTION TO NORMALISE FITNESS SCORES (SOME PART OF CODE TAKEN FROM INTERNET NUMPY DOCUMENTATION)
 def normalise_fitness_scores(fitness_scores):
 
     map_to_minimization_problem = list(map(lambda value: 1. / value, fitness_scores))

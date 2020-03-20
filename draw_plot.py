@@ -1,9 +1,7 @@
 #### IMPORTS ####
 
-import plotly # Python Plotting Library
-from plotly.graph_objs import * 
-
-
+import plotly as py # Python Plotting Library
+import plotly.graph_objs as go
 
 class PlotDrawer:
 
@@ -11,38 +9,35 @@ class PlotDrawer:
     def drawPlot(plot_name, generations, average_results, max_results, min_results):
 
         generations_rev = generations[::-1]
-
         min_results = min_results[::-1]
 
-    ## GRAPH SETTINGS
+        # GRAPH SETTINGS
 
-        #### Graph Settings Have been Taken From the Internet
-
-        max_and_min_trace = Scatter(
+        max_and_min_trace = go.Scatter(
             x=generations + generations_rev,
             y=max_results + min_results,
             fill='tozerox',
             fillcolor='rgba(0,100,80,0.2)',
-            line=Line(color='transparent'),
+            line=go.scatter.Line(color='rgb(255,0,0,0)'),
             showlegend=True,
             name='Max and min',
         )
 
-        average_trace = Scatter(
+        average_trace = go.Scatter(
             x=generations,
             y=average_results,
-            line=Line(color='rgb(0,100,80)'),
+            line=go.scatter.Line(color='rgb(0,100,80)'),
             mode='lines',
             name='Average',
         )
 
-        data = Data([max_and_min_trace, average_trace])
+        data = [max_and_min_trace, average_trace]
 
-        layout = Layout(
+        layout = go.Layout(
             title=plot_name,
             paper_bgcolor='rgb(255,255,255)',
             plot_bgcolor='rgb(229,229,229)',
-            xaxis=XAxis(
+            xaxis=go.layout.XAxis(
                 gridcolor='rgb(255,255,255)',
                 showgrid=True,
                 showline=False,
@@ -51,7 +46,7 @@ class PlotDrawer:
                 ticks='outside',
                 zeroline=False
             ),
-            yaxis=YAxis(
+            yaxis=go.layout.YAxis(
                 gridcolor='rgb(255,255,255)',
                 showgrid=True,
                 showline=False,
@@ -64,6 +59,6 @@ class PlotDrawer:
 
         ## SETTINGS END
 
-        # CREATE GRAPH_FILE OFFLINE 
-        fig = Figure(data=data, layout=layout)
-        plotly.offline.plot(fig, filename='plot_' + plot_name + '.html')
+        # CREATE GRAPH_FILE OFFLINE
+        fig = go.Figure(data=data, layout=layout)
+        py.offline.plot(fig, filename='plot_' + plot_name + '.html')

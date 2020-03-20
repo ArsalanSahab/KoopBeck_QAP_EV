@@ -1,5 +1,3 @@
-
-#### PYTHON IMPORTS ####
 import os
 import numpy as np
 
@@ -7,8 +5,7 @@ import numpy as np
 #### CUSTOM IMPORTS ####
 from configurations import DATA_SET
 
-
-# FUNCTION TO READ THE 2D ARRAYS FROM DATA SET 
+# FUNCTION TO READ THE 2D ARRAYS FROM DATA SET
 
 def array_read_from_file(data_set_file) -> np.ndarray:
 
