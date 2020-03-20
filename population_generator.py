@@ -1,15 +1,11 @@
 #### PYTHON IMPORTS ####
 import random
 
-
-# FUNCTION TO GENERATE RANDOM POPULATION
-
+# Generate random population
 def generate_population(num_selected, num_chromosomes):
-
-    population = []
+    population = [] # Chromosomes are appended in this
 
     for i in range(num_chromosomes):
-
         chromosome = list(range(num_selected))
         random.shuffle(chromosome)
         population.append(chromosome)
