@@ -30,18 +30,26 @@ class CustomDrawer(turtle.Turtle):
         if not CustomDrawer.SHOW_TURTLE:
             self.hideturtle()
 
-    # FUNCTION TO DRAW THE MAIN VISUAL FRAME
+    # Draw the visual frame using all the given methods
+    # This function is run iteratively
     def draw_main_frame(
             self,
             max_chromosome, generation_number, best_score,
             best_chromosome, flow_matrix, distance_matrix
     ):
+
         # Preparation for drawing
         self.clear()
         self.reset()
+
+        # Print text using given function
         self.__draw_generation_info(generation_number, best_score, best_chromosome)
+
+        # Draw points for chromosomes
         self.draw_points(max_chromosome)
+        # Draw lines for flow and distance
         self.__draw_connections_between_points(max_chromosome, flow_matrix, distance_matrix)
+        # This refreshes the screen
         self.screen.update()
 
     # Move turtle to center
@@ -52,7 +60,7 @@ class CustomDrawer(turtle.Turtle):
         self.right(90 - (polygon_angle / 2))
         self.pendown()
 
-    # Takes the number of points and draws them
+    # Draw points for chromosome
     def draw_points(self, best_chromosome):
 
         number_of_points = len(best_chromosome)

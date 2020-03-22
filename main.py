@@ -7,10 +7,8 @@ import os.path
 import time
 import numpy as np
 
+# Add current path to the system PATH to import local files
 sys.path.append(os.path.join(os.path.dirname(__file__), ''))
-
-#### CUSTOM IMPORTS ####
-
 
 from configurations import POPULATION_SIZE, NUMBER_OF_GENERATIONS, DRAW_VISUALIZATION, DATA_SET, DRAW_GRAPH
 from load_data_set import array_size, flow_array, distance_array
@@ -22,7 +20,7 @@ from mutation_configs import Mutation, BasicMutation
 from turtle_visualisations import CustomDrawer
 from draw_plot import PlotDrawer
 
-# Selecting strategies from imported functions
+# Select strategies from imported functions
 selection_strategy = Selection(selection_algorithm=TournamentSelection())
 mutation_strategy = Mutation(mutation_algorithm=BasicMutation())
 crossover_strategy = Crossover(crossover_algorithm=BasicCrossover())
@@ -36,11 +34,13 @@ def main():
     turtle_drawer = CustomDrawer()
     plot_drawer = PlotDrawer()
 
-
+    # Result arrays for plotting
     generation_indices = []
     average_results = []
     min_results = []
     max_results = []
+
+    # Keep track of the last max_chromosome to avoid redundancy
     previous_max_chromosome = []
 
     # Implementing the turtle functions and iteratively drawing
