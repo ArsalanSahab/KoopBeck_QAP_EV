@@ -81,8 +81,7 @@ class TournamentSelection(object):
         new_species = []
         # If elitisim is enabled, size is decremented by 1 to
         # promote the fittest
-        population_size = len(fitness_scores_list) - 1 if elitism
-            else len(fitness_scores_list)
+        population_size = len(fitness_scores_list) - 1 if elitism else len(fitness_scores_list)
 
         for _ in range(0, population_size):
 
