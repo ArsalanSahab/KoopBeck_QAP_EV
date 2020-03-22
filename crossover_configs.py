@@ -1,45 +1,36 @@
-#### PYTHON IMPORTS ####
 import copy
 import random
 
-#### CUSTOM IMPORTS ####
 
 from configurations import CROSSOVER_PERCENTAGE
 
 
-# INITIATOR CLASS
-
+# Initiator Class
 class Crossover(object):
     def __init__(self, crossover_algorithm):
-
         self.crossover_algorithm = crossover_algorithm
 
     def crossover(self, population):
-
         return self.crossover_algorithm(population)
 
-# MAIN CROSSOVER IMPLEMENTATION CLASS
 
+# Main Class for Crossover Implementation
 class BasicCrossover(object):
 
     def __init__(self):
-
         pass
 
     def __call__(self, population):
-
         return self.crossover_init(population)
 
-
-
-    # FUNCTION TO INITIATE CROSSOVER TECHNIQUE
-
+    # Initiate Crossover Technique
     @staticmethod
     def crossover_init(population):
 
         not_crossovered = []
         to_crossover = []
 
+        # Pass empty lists and population to static method, modifying the lists
         BasicCrossover.select_chromosomes(population, not_crossovered, to_crossover)
 
         crossover_tuples = BasicCrossover.create_crossover_tuples(not_crossovered, to_crossover)
@@ -72,16 +63,14 @@ class BasicCrossover(object):
     def select_chromosomes(population, not_crossovered, to_crossover):
 
         for chromosome in population:
-
+            # Draw sample from a uniform distribution, and add the chromosome
+            # to the crossover list if sample is less than the threshold
             if random.uniform(0, 1) < CROSSOVER_PERCENTAGE:
-
                 to_crossover.append(chromosome)
-
             else:
-
                 not_crossovered.append(chromosome)
 
-    #FUNCTION TO CREATE TUPLES FROM SELECTED CHROMOSOMES FOR CROSSOVER
+    # Create tuples from selected chromosomes for crossover
     @staticmethod
     def create_crossover_tuples(not_crossovered, to_crossover):
 
@@ -125,12 +114,12 @@ class BasicCrossover(object):
             index_of_value_b_in_a = child_1.index(value_b)
             index_of_value_a_in_b = child_2.index(value_a)
 
-        
+
             child_1[index_of_value_b_in_a] = value_a
             child_2[index_of_value_a_in_b] = value_b
 
             # Change values
             child_1[index] = value_b
             child_2[index] = value_a
-            
+
         return child_1, child_2
