@@ -1,4 +1,3 @@
-#### PYTHON IMPORTS ####
 import random
 
 # Generate random population of chromosomes

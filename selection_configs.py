@@ -83,18 +83,19 @@ class TournamentSelection(object):
         # promote the fittest
         population_size = len(fitness_scores_list) - 1 if elitism else len(fitness_scores_list)
 
+        #
         for _ in range(0, population_size):
 
             # Take two parent indices
-            parent_of = random.randint(0, len(fitness_scores_list) - 1)
-            parent_tf = random.randint(0, len(fitness_scores_list) - 1)
+            parent_1 = random.randint(0, len(fitness_scores_list) - 1)
+            parent_2 = random.randint(0, len(fitness_scores_list) - 1)
 
             # Compare scores
             # The parent with the higher fitness wins
-            if fitness_scores_list[parent_of] > fitness_scores_list[parent_tf]:
-                ch_winner = population_list[parent_of]
+            if fitness_scores_list[parent_1] > fitness_scores_list[parent_2]:
+                ch_winner = population_list[parent_1]
             else:
-                ch_winner = population_list[parent_tf]
+                ch_winner = population_list[parent_2]
 
             # Add to list
             new_species.append(ch_winner)

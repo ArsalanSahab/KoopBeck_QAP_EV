@@ -10,7 +10,7 @@ def array_read_from_file(data_set_file) -> np.ndarray:
     row_counter = 0
 
     while row_counter < array_size:
-
+        # Read line from file
         line = data_set_file.readline()
 
         # Check if the read line is a string
