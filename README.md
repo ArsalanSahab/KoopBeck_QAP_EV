@@ -59,3 +59,22 @@ The files contains :
 
                 1         4               2
                 3         4               4 
+
+## Approach 
+
+The solution requires a permutation to be calculated ,  and then an OPTIMAL value be calculated .
+
+eg : let p = {1,3,4,8} be a permutation matrix
+
+then the optimal solution can be calculated by : 
+
+f(1,3) + f(4,1) + f(1,8) + f(1,4) + ........ = 576 , where f(x,y) is the flow function of the resources permutation between Location x and y .
+
+
+This approach uses the Evolutionary Algorithm techniques to come to the optimal Solution , through the following steps :
+
+1. Generate a random population ( an array of arrays).
+2. select the fittest chromosomes(an array from the population) by applying fitness and selection techniques.
+3. Apply the CrossOver(Implemented) and Mutation(Not Yet Implemented) techniques to randomise the selected chromosome .
+4. Calculate the Mean Fitness and Max Score of the best chromosome in the current generation.
+5. Repeat the process for n number of generations while arrivig to the OPTIMAL solution.
