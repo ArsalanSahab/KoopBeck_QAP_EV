@@ -18,6 +18,7 @@ The quadratic assignment problem was introduced by Koopmans and Beckman in 1957 
 3. Through commandprompt/termial navigate to the downloaded repo directory.
 4. Type the command ` pip install -r requirements.txt ` to install the required libraries.
 5. After the above , Type the command : ` python3 main.py `.
+                     Alternative :      ` py  -3 main.py `.
 
 
 ### To Customise Options please follow the steps :
