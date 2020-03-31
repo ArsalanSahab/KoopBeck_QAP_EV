@@ -31,4 +31,25 @@ The files contains :
 
         1. First Line = size of array , i.e = 12 -> two 12x12 arrays
         2. The First Matrix/Array represents the Manhattan Distances Between n = 12 Locations.
+
+        EXAMPLE :
+
+                MANHATTAN DISTANCES 
+
+         LOCATION(X) | LOCATION(Y) | DISTANCE(X,Y)
+
+                1         2               52
+                3         7               25    
+
+
         3. The Second Matrix/Array represents the FLOW or ASSIGNMENT COST of n = 12 Resources/Facilities.
+        
+
+         EXAMPLE :
+
+                FLOW/ASSIGMENT_COSTS 
+
+         RESOURCE(X) | RESOURCE(Y) | FLOW(X,Y)
+
+                1         4               2
+                3         4               4 
