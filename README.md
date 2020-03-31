@@ -12,3 +12,14 @@ Koopmans-Beckmann Quadratic Assignment Problem Minimisation Through Evolutionary
 3. Through commandprompt/termial navigate to the downloaded repo directory.
 4. Type the command ` pip install -r requirements.txt ` to install the required libraries.
 5. After the above , Type the command : ` python3 main.py `.
+
+
+### To Customise Options please follow the steps :
+
+1. Navigate to ` configurations.py ` file.
+2. You can Change : 
+
+        . DATA_SET : Filenames in /data folder
+        . CROSSOVER_PERCENTAGE 
+        . POPULATION_SIZE
+        . NUMBER_OF_GENERATIONS
