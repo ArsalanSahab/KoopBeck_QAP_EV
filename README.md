@@ -23,3 +23,12 @@ Koopmans-Beckmann Quadratic Assignment Problem Minimisation Through Evolutionary
         . CROSSOVER_PERCENTAGE 
         . POPULATION_SIZE
         . NUMBER_OF_GENERATIONS
+
+
+### Details about the Data Set File :
+
+The files contains :
+
+        1. First Line = size of array , i.e = 12 -> two 12x12 arrays
+        2. The First Matrix/Array represents the Manhattan Distances Between n = 12 Locations.
+        3. The Second Matrix/Array represents the FLOW or ASSIGMENT COST of n = 12 Resources/Facilities.
