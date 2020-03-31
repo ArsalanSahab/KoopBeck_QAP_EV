@@ -2,6 +2,12 @@
 Koopmans-Beckmann Quadratic Assignment Problem Minimisation Through Evolutionary Algorithm
 
 
+
+## Problem Definition
+
+The quadratic assignment problem was introduced by Koopmans and Beckman in 1957 . The objectives of the problem is to assign a set of resources/facilities to a set of locations in such a way as to minimize the total assignment cost. The assignment cost for a pair of facilities is a function of the flow between the facilities and the distance between the locations of the facilities.
+
+
 ### Steps to download and run 
 
 #### Note : Must have python version 3.6 or above installed (and added to path)
@@ -43,7 +49,7 @@ The files contains :
 
 
         3. The Second Matrix/Array represents the FLOW or ASSIGNMENT COST of n = 12 Resources/Facilities.
-        
+
 
          EXAMPLE :
 
