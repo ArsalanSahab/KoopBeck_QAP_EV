@@ -17,6 +17,7 @@ from load_data_set import array_size, flow_array, distance_array
 from fitness_func_configs import normalise_fitness_scores, get_fitness_scores
 from selection_configs import Selection, TournamentSelection
 from crossover_configs import BasicCrossover, Crossover
+from mutation_configs import BasicMutation, Mutation
 
 
 
