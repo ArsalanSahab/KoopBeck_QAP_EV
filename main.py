@@ -23,6 +23,7 @@ from crossover_configs import BasicCrossover, Crossover
 # Select strategies from imported functions using the initialization functions
 selection_strategy = Selection(selection_algorithm=TournamentSelection())
 crossover_strategy = Crossover(crossover_algorithm=BasicCrossover())
+mutation_strategy = Mutation(mutation_algorithm=BasicMutation())
 
 def main():
     # Generate random population of chromosomes
@@ -67,6 +68,8 @@ def main():
 
         # Input the selected chromosomes to the imported crossover function
         crossed_chromosomes = crossover_strategy.crossover(selected_chromosomes)
+        # Apply mutation over the crossever chromosomes
+        mutated_chromosomes = mutation_strategy.mutate(crossed_chromosomes)
        
 
         # Print current values to the terminal
