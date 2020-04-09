@@ -2,13 +2,18 @@
 Koopmans-Beckmann Quadratic Assignment Problem Minimisation Through Evolutionary Algorithm
 
 
-### Steps to download and run 
 
-#### Note : Must have python version 3.6 or above installed (and added to path)
+### Requirements:
++Python 3.6 or above (with pip)
+    +numpy 1.18.2
+    +plotly 4.5.4
 
 
-1. Click on the green button `Clone or Download` to download the repo.
-2. Extract the contents.
-3. Through commandprompt/termial navigate to the downloaded repo directory.
-4. Type the command ` pip install -r requirements.txt ` to install the required libraries.
-5. After the above , Type the command : ` python3 main.py `.
+### Usage Instructions:
+1. Clone this repo
+2. Navigate to the repo directory from the terminal/Command Prompt
+3. Enter command `pip install -r requirements.txt` to install the required libraries
+4. Enter `python3 main.py`
+
+### UML Diagram
+![UML Diagram](/images/uml.png)
