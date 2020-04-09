@@ -12,7 +12,7 @@ class Mutation(object):
         return self.mutation_algorithm(population)
 
 
-# Main class for mutation (SOME PARTS OF CODE FOR THIS CLASS HAVE BEEN TAKEN FROM THE INTERNET)
+# Main class for mutation (SOME PARTS OF CODE FOR THIS CLASS HAVE BEEN INSPIRED FROM THE INTERNET)
 class BasicMutation(object):
 
     def __init__(self):
