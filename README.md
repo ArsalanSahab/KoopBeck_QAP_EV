@@ -19,17 +19,17 @@ The quadratic assignment problem was introduced by Koopmans and Beckman in 1957 
 1. Clone this repo
 2. Navigate to the repo directory from the terminal/Command Prompt
 3. Enter command `pip install -r requirements.txt` to install the required libraries
-4. Enter `python3 main.py`
+4. Enter `python3 main.py` or `py -3 main.py `
 
 
 ### Customizing options:
 
 1. Navigate to ` configurations.py ` file.
 2. You can Change : 
-        * DATA_SET : Filenames in /data folder
-        * CROSSOVER_PERCENTAGE 
-        * POPULATION_SIZE
-        * NUMBER_OF_GENERATIONS
+        1. DATA_SET : Filenames in /data folder
+        2. CROSSOVER_PERCENTAGE 
+        3. POPULATION_SIZE
+        4. NUMBER_OF_GENERATIONS
 
 
 ### Details about the Data Set File :
