@@ -10,9 +10,9 @@ The quadratic assignment problem was introduced by Koopmans and Beckman in 1957 
 
 
 ### Requirements:
-*Python 3.6 or above (with pip)
-    *numpy 1.18.2
-    *plotly 4.5.4
+* Python 3.6 or above (with pip)
+    * numpy 1.18.2
+    * plotly 4.5.4
 
 
 ### Usage Instructions:
