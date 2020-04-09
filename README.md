@@ -2,7 +2,6 @@
 Koopmans-Beckmann Quadratic Assignment Problem Minimisation Through Evolutionary Algorithm
 
 
-<<<<<<< HEAD
 =======
 
 ## Problem Definition
@@ -10,42 +9,27 @@ Koopmans-Beckmann Quadratic Assignment Problem Minimisation Through Evolutionary
 The quadratic assignment problem was introduced by Koopmans and Beckman in 1957 . The objectives of the problem is to assign a set of resources/facilities to a set of locations in such a way as to minimize the total assignment cost. The assignment cost for a pair of facilities is a function of the flow between the facilities and the distance between the locations of the facilities.
 
 
-### Steps to download and run 
->>>>>>> b1aa74153189334fb6aeda61e3ddf1d4995ac7a6
-
 ### Requirements:
-+Python 3.6 or above (with pip)
-    +numpy 1.18.2
-    +plotly 4.5.4
+*Python 3.6 or above (with pip)
+    *numpy 1.18.2
+    *plotly 4.5.4
 
 
-<<<<<<< HEAD
 ### Usage Instructions:
 1. Clone this repo
 2. Navigate to the repo directory from the terminal/Command Prompt
 3. Enter command `pip install -r requirements.txt` to install the required libraries
 4. Enter `python3 main.py`
 
-### UML Diagram
-![UML Diagram](/images/uml.png)
-=======
-1. Click on the green button `Clone or Download` to download the repo.
-2. Extract the contents.
-3. Through commandprompt/termial navigate to the downloaded repo directory.
-4. Type the command ` pip install -r requirements.txt ` to install the required libraries.
-5. After the above , Type the command : ` python3 main.py `.
-                     Alternative :      ` py  -3 main.py `.
 
-
-### To Customise Options please follow the steps :
+### Customizing options:
 
 1. Navigate to ` configurations.py ` file.
 2. You can Change : 
-
-        . DATA_SET : Filenames in /data folder
-        . CROSSOVER_PERCENTAGE 
-        . POPULATION_SIZE
-        . NUMBER_OF_GENERATIONS
+        * DATA_SET : Filenames in /data folder
+        * CROSSOVER_PERCENTAGE 
+        * POPULATION_SIZE
+        * NUMBER_OF_GENERATIONS
 
 
 ### Details about the Data Set File :
@@ -95,4 +79,6 @@ This approach uses the Evolutionary Algorithm techniques to come to the optimal 
 3. Apply the CrossOver(Implemented) and Mutation(Not Yet Implemented) techniques to randomise the selected chromosome .
 4. Calculate the Mean Fitness and Max Score of the best chromosome in the current generation.
 5. Repeat the process for n number of generations while arrivig to the OPTIMAL solution.
->>>>>>> b1aa74153189334fb6aeda61e3ddf1d4995ac7a6
+
+### UML Diagram
+![UML Diagram](/images/uml.png)
