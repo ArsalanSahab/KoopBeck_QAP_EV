@@ -18,6 +18,8 @@ from fitness_func_configs import normalise_fitness_scores, get_fitness_scores
 from selection_configs import Selection, TournamentSelection
 from crossover_configs import BasicCrossover, Crossover
 from mutation_configs import BasicMutation, Mutation
+from turtle_drawer import TurtleDrawer
+from plot_drawer import PlotDrawer
 
 
 
@@ -38,6 +40,9 @@ def main():
         # Add to population
         population.append(chromosome)
 
+
+    turtle_drawer = TurtleDrawer()
+    plot_drawer = PlotDrawer()
 
     # Result arrays for plotting
     generation_indices = []
@@ -77,6 +82,29 @@ def main():
         print("Generation_Count: \t\t\t\t{}\nMean fitness.: \t\t\t{}\nMax score: \t\t\t{}\nMax chromosome.: \t\t{}\n\n"
               .format(gen_count, average_fitness, max_fitness, max_chromosome))
 
+
+        # DRAWING FRAME 
+
+        # Implementing the turtle functions and iteratively drawing
+        def draw_visual_frame():
+        # The function takes flow and distance arrays, the best chromosome,
+        # and other data and draws points and lines representing flow and distance
+            turtle_drawer.draw_main_frame(
+                    max_chromosome, gen_count, max_fitness,
+                    max_chromosome, flow_array, distance_array
+                    )
+
+            # Delay between each iteration of drawing
+            time.sleep(2)
+
+            return
+
+
+        if previous_max_chromosome != max_chromosome :
+
+            draw_visual_frame()
+
+
         # Update the max chromosome
         previous_max_chromosome = max_chromosome
 
@@ -94,6 +122,11 @@ def main():
 
         # wait for 2 seconds between consective output generation
         time.sleep(2)
+
+
+        plot_drawer.drawPlot("Plot For " + str(gen_count) +" Generation", generation_indices, average_results, max_results, min_results)
+
+       # turtle_drawer.screen.mainloop()
 
 
 
