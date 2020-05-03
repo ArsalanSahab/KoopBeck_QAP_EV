@@ -19,13 +19,15 @@ from selection_configs import Selection, TournamentSelection
 from crossover_configs import BasicCrossover, Crossover
 from mutation_configs import BasicMutation, Mutation
 from turtle_drawer import TurtleDrawer
-from plot_drawer import PlotDrawer
+from Graphs.plot_drawer import PlotDrawer
 
 
 
-# Select strategies from imported functions using the initialization functions
+# Selection strategies from imported using the initialization functions
 selection_strategy = Selection(selection_algorithm=TournamentSelection())
+# CrossOver strategies from imported using the initialization functions
 crossover_strategy = Crossover(crossover_algorithm=BasicCrossover())
+# Mutation strategies from imported using the initialization functions
 mutation_strategy = Mutation(mutation_algorithm=BasicMutation())
 
 def main():
@@ -124,7 +126,7 @@ def main():
         time.sleep(2)
 
 
-        plot_drawer.drawPlot("Plot For " + str(gen_count) +" Generation", generation_indices, average_results, max_results, min_results)
+        plot_drawer.drawPlot("Plot_For_" + str(gen_count) +"_Generation", generation_indices, average_results, max_results, min_results)
 
        # turtle_drawer.screen.mainloop()
 

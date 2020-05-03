@@ -69,4 +69,4 @@ class PlotDrawer:
 
         # Generate a plot (graph) and save it as an html file
         fig = go.Figure(data=data, layout=layout)
-        py.offline.plot(fig, filename='plot_' + plot_name + '.html')
+        py.offline.plot(fig, filename=plot_name + '.html')
