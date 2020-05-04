@@ -12,7 +12,7 @@ import random
 # Add current path to the system PATH to import local files
 sys.path.append(os.path.join(os.path.dirname(__file__), ''))
 
-from configurations import POPULATION_SIZE, NUMBER_OF_GENERATIONS,DATA_SET
+from configurations import POPULATION_SIZE, NUMBER_OF_GENERATIONS,DATA_SET, SLEEP_TIME
 from load_data_set import array_size, flow_array, distance_array
 from fitness_func_configs import normalise_fitness_scores, get_fitness_scores
 from selection_configs import Selection, TournamentSelection
@@ -78,14 +78,14 @@ def main():
         crossed_chromosomes = crossover_strategy.crossover(selected_chromosomes)
         # Apply mutation over the crossever chromosomes
         mutated_chromosomes = mutation_strategy.mutate(crossed_chromosomes)
-       
+
 
         # Print current values to the terminal
         print("Generation_Count: \t\t\t\t{}\nMean fitness.: \t\t\t{}\nMax score: \t\t\t{}\nMax chromosome.: \t\t{}\n\n"
               .format(gen_count, average_fitness, max_fitness, max_chromosome))
 
 
-        # DRAWING FRAME 
+        # DRAWING FRAME
 
         # Implementing the turtle functions and iteratively drawing
         def draw_visual_frame():
@@ -97,7 +97,7 @@ def main():
                     )
 
             # Delay between each iteration of drawing
-            time.sleep(2)
+            time.sleep(SLEEP_TIME)
 
             return
 
@@ -123,10 +123,12 @@ def main():
         generation_indices.append(gen_count)
 
         # wait for 2 seconds between consective output generation
-        time.sleep(2)
+        # time.sleep(2)
 
-
-        plot_drawer.drawPlot("Plot_For_" + str(gen_count) +"_Generation", generation_indices, average_results, max_results, min_results)
+        # Draw and save a scatter plot at the first generation, and every 1/5ths of the total generations after that,
+        # and then at the very last generation.
+        if gen_count == 0 or gen_count % (NUMBER_OF_GENERATIONS / 5) == 0 or gen_count == NUMBER_OF_GENERATIONS - 1:
+            plot_drawer.drawPlot("Plot_For_" + 'Gen_' + str(gen_count), generation_indices, average_results, max_results, min_results, path='Graphs')
 
        # turtle_drawer.screen.mainloop()
 
