@@ -6,7 +6,7 @@ import plotly.graph_objs as go
 class PlotDrawer:
 
     @staticmethod
-    def drawPlot(plot_name, generations, average_results, max_results, min_results):
+    def drawPlot(plot_name, generations, average_results, max_results, min_results, path):
 
         generations_rev = generations[::-1]
         min_results = min_results[::-1]
@@ -69,4 +69,4 @@ class PlotDrawer:
 
         # Generate a plot (graph) and save it as an html file
         fig = go.Figure(data=data, layout=layout)
-        py.offline.plot(fig, filename=plot_name + '.html')
+        py.offline.plot(fig, filename=path + '/' + plot_name + '.html')
