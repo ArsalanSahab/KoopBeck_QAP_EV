@@ -136,7 +136,9 @@ class TurtleDrawer(turtle.Turtle):
         self.write(f'Generation number: {generation_number}', font=TurtleDrawer.FONT_CONFIG)
         self.forward(20)
         self.write(f'Best score: {best_score}', font=TurtleDrawer.FONT_CONFIG)
-
+        self.forward(20)
+        self.write(f'Key : Small Width Dark Green > Best / Large Width Dark Red > Worst', font=TurtleDrawer.FONT_CONFIG)
+        
         self.left(90)
         self.goto(start_position[0], start_position[1])
         self.pendown()
