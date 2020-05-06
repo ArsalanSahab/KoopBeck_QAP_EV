@@ -26,14 +26,14 @@ The quadratic assignment problem was introduced by Koopmans and Beckman in 1957 
 
 1. Navigate to ` configurations.py ` file.
 2. You can Change : 
-        1. DATA_SET : Filenames in /data folder
-        2. CROSSOVER_PERCENTAGE 
-        3. POPULATION_SIZE
-        4. NUMBER_OF_GENERATIONS
-        5. MUTATION_PERCENTAGE
-        6. SLEEP_TIME
-        7. GRAPH_AUTO_OPEN : IF True then plotly will open grpah in browser , else will save in /Graphs
-        8. TURTLE_DRAW_ONE_BY_ONE : IF True the tutle component will draw lines one by one (se to true to see how the tutle is working)
+        * DATA_SET : Filenames in /data folder
+        * CROSSOVER_PERCENTAGE 
+        * POPULATION_SIZE
+        * NUMBER_OF_GENERATIONS
+        * MUTATION_PERCENTAGE
+        * SLEEP_TIME
+        * GRAPH_AUTO_OPEN : IF True then plotly will open grpah in browser , else will save in /Graphs
+        * TURTLE_DRAW_ONE_BY_ONE : IF True the tutle component will draw lines one by one (se to true to see how the tutle is working)
 
 
 ### Details about the Data Set File :
