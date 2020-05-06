@@ -3,6 +3,9 @@ import math
 import sys
 import turtle
 import numpy as np
+import time
+
+from configurations import TURTLE_DRAW_ONE_BY_ONE, SLEEP_TIME
 
 
 # TURTLE CLASS TO DRAW VISUALISATION (CODE FOR THIS CLASS HAS BEEN TAKEN FROM INTERNET AND EDITED )
@@ -12,7 +15,7 @@ class TurtleDrawer(turtle.Turtle):
     # Settings
     POINT_RADIUS = 20
     FONT_CONFIG = ["Arial", 14, "normal"]
-    DRAWING_SPEED = "fastest"
+    DRAWING_SPEED = 1
     SHOW_TURTLE = False
     CAPTIONS_MARGIN = 50
     DISTANCE_BETWEEN_POINTS = 100
@@ -48,6 +51,7 @@ class TurtleDrawer(turtle.Turtle):
         # Draw points for chromosomes
         self.draw_points(max_chromosome)
         # Draw lines for flow and distance
+        
         self.__draw_connections_between_points(max_chromosome, flow_matrix, distance_matrix)
         # This refreshes the screen
         self.screen.update()
@@ -103,6 +107,10 @@ class TurtleDrawer(turtle.Turtle):
                                      pen_color=self.__get_color_for_value(distance_value, min_distance, max_distance),
                                      pen_size=flow_value
                                      )
+                    if TURTLE_DRAW_ONE_BY_ONE == True :
+
+                        time.sleep(SLEEP_TIME)
+                        self.screen.update()
 
     # Input points, draw a default black line
     def __draw_line(self, object_from, object_to, pen_color=(0, 0, 0), pen_size=1):

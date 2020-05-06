@@ -2,6 +2,7 @@
 
 import plotly as py # Python Plotting Library
 import plotly.graph_objs as go
+from configurations import GRAPH_AUTO_OPEN
 
 class PlotDrawer:
 
@@ -69,4 +70,4 @@ class PlotDrawer:
 
         # Generate a plot (graph) and save it as an html file
         fig = go.Figure(data=data, layout=layout)
-        py.offline.plot(fig, filename=path + '/' + plot_name + '.html')
+        py.offline.plot(fig, filename=path + '/' + plot_name + '.html',auto_open=GRAPH_AUTO_OPEN)
