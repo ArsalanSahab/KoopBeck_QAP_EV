@@ -125,7 +125,7 @@ def main():
         # wait for 2 seconds between consective output generation
         # time.sleep(2)
 
-        # Draw and save a scatter plot at the first generation, and every 1/5ths of the total generations after that,
+        # Draw and save a plot at the first generation, and every 1/5ths of the total generations after that,
         # and then at the very last generation.
         if gen_count == 0 or gen_count % (NUMBER_OF_GENERATIONS / 5) == 0 or gen_count == NUMBER_OF_GENERATIONS - 1:
             plot_drawer.drawPlot("Plot_For_" + 'Gen_' + str(gen_count), generation_indices, average_results, max_results, min_results, path='Graphs')
