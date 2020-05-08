@@ -16,7 +16,7 @@ from configurations import POPULATION_SIZE, NUMBER_OF_GENERATIONS,DATA_SET, SLEE
 from load_data_set import array_size, flow_array, distance_array
 from fitness_func_configs import normalise_fitness_scores, get_fitness_scores
 from selection_configs import Selection, TournamentSelection
-from crossover_configs import BasicCrossover, Crossover
+from crossover_configs import Crossover
 from mutation_configs import BasicMutation, Mutation
 from turtle_drawer import TurtleDrawer
 from Graphs.plot_drawer import PlotDrawer
@@ -26,7 +26,7 @@ from Graphs.plot_drawer import PlotDrawer
 # Selection strategies from imported using the initialization functions
 selection_strategy = Selection(selection_algorithm=TournamentSelection())
 # CrossOver strategies from imported using the initialization functions
-crossover_strategy = Crossover(crossover_algorithm=BasicCrossover())
+crossover_strategy = Crossover()
 # Mutation strategies from imported using the initialization functions
 mutation_strategy = Mutation(mutation_algorithm=BasicMutation())
 
@@ -75,7 +75,7 @@ def main():
         selected_chromosomes = selection_strategy.select(population, fitness_scores_normalized)
 
         # Input the selected chromosomes to the imported crossover function
-        crossed_chromosomes = crossover_strategy.crossover(selected_chromosomes)
+        crossed_chromosomes = crossover_strategy.start_crossover(selected_chromosomes)
         # Apply mutation over the crossever chromosomes
         mutated_chromosomes = mutation_strategy.mutate(crossed_chromosomes)
 

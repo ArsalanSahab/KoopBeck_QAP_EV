@@ -4,7 +4,7 @@ import random
 
 from configurations import CROSSOVER_PERCENTAGE
 
-
+'''
 # Initiator Class
 class Crossover(object):
     def __init__(self, crossover_algorithm):
@@ -12,15 +12,18 @@ class Crossover(object):
 
     def crossover(self, population):
         return self.crossover_algorithm(population)
-
+'''
 
 # Main Class for Crossover Implementation
-class BasicCrossover(object):
+class Crossover(object):
 
     def __init__(self):
+
         pass
 
-    def __call__(self, population):
+        
+    def start_crossover(self, population):
+
         return self.crossover_init(population)
 
     # Initiate Crossover Technique
@@ -31,11 +34,11 @@ class BasicCrossover(object):
         to_crossover = []
 
         # Pass empty lists and population to static method, modifying the lists
-        BasicCrossover.select_chromosomes(population, not_crossovered, to_crossover)
+        Crossover.select_chromosomes(population, not_crossovered, to_crossover)
 
-        crossover_tuples = BasicCrossover.create_crossover_tuples(not_crossovered, to_crossover)
+        crossover_tuples = Crossover.create_crossover_tuples(not_crossovered, to_crossover)
 
-        crossovered_species = BasicCrossover.crossover_population_iter(crossover_tuples)
+        crossovered_species = Crossover.crossover_population_iter(crossover_tuples)
 
         return crossovered_species + not_crossovered
 
@@ -48,7 +51,7 @@ class BasicCrossover(object):
         crossovered = []
 
         for crossover_tuple in crossover_tuples:
-            child_1, child_2 = BasicCrossover.chromosomes_crossover_init(
+            child_1, child_2 = Crossover.chromosomes_crossover_init(
                 crossover_tuple,
                 # random point selected for crossover
                 point_of_crossover=random.randint(0, len(crossover_tuple) - 1)
