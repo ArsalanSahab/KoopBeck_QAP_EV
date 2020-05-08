@@ -6,14 +6,7 @@ SOURCE: https://www.hindawi.com/journals/mpe/2016/3672758
 import numpy as np
 import random
 
-# Initialization class
-class Selection(object):
 
-    def __init__(self, selection_algorithm):
-        self.selection_algorithm = selection_algorithm
-
-    def select(self, population, fitness_scores):
-        return self.selection_algorithm(population, fitness_scores)
 
 # Class for Tournament Selection implementation.
 class TournamentSelection(object):
@@ -21,7 +14,7 @@ class TournamentSelection(object):
     def __init__(self):
         pass
 
-    def __call__(self, population, fitness_score_list):
+    def start_tournament(self, population, fitness_score_list):
         return self.tournament_selection(population, fitness_score_list)
 
     # Initiate tournament selection

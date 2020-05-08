@@ -15,7 +15,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), ''))
 from configurations import POPULATION_SIZE, NUMBER_OF_GENERATIONS,DATA_SET, SLEEP_TIME
 from load_data_set import array_size, flow_array, distance_array
 from fitness_func_configs import normalise_fitness_scores, get_fitness_scores
-from selection_configs import Selection, TournamentSelection
+from selection_configs import TournamentSelection
 from crossover_configs import Crossover
 from mutation_configs import Mutation
 from turtle_drawer import TurtleDrawer
@@ -24,7 +24,7 @@ from Graphs.plot_drawer import PlotDrawer
 
 
 # Selection strategies from imported using the initialization functions
-selection_strategy = Selection(selection_algorithm=TournamentSelection())
+selection_strategy = TournamentSelection()
 # CrossOver strategies from imported using the initialization functions
 crossover_strategy = Crossover()
 # Mutation strategies from imported using the initialization functions
@@ -72,7 +72,7 @@ def main():
 
         # Use the imported strategy functions to select chromosomes from
         # population based on the normalized scores
-        selected_chromosomes = selection_strategy.select(population, fitness_scores_normalized)
+        selected_chromosomes = selection_strategy.start_tournament(population, fitness_scores_normalized)
 
         # Input the selected chromosomes to the imported crossover function
         crossed_chromosomes = crossover_strategy.start_crossover(selected_chromosomes)
