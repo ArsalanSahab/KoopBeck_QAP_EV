@@ -4,15 +4,6 @@ import random
 
 from configurations import CROSSOVER_PERCENTAGE
 
-'''
-# Initiator Class
-class Crossover(object):
-    def __init__(self, crossover_algorithm):
-        self.crossover_algorithm = crossover_algorithm
-
-    def crossover(self, population):
-        return self.crossover_algorithm(population)
-'''
 
 # Main Class for Crossover Implementation
 class Crossover(object):
