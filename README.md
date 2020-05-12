@@ -8,6 +8,21 @@ Koopmans-Beckmann Quadratic Assignment Problem Minimisation Through Evolutionary
 
 The quadratic assignment problem was introduced by Koopmans and Beckman in 1957 . The objectives of the problem is to assign a set of resources/facilities to a set of locations in such a way as to minimize the total assignment cost. The assignment cost for a pair of facilities is a function of the flow between the facilities and the distance between the locations of the facilities.
 
+## Algorithm Explanation
+
+Data elements used:
+* An n x n array (in the dataset file) that represents the "Manhattan distance" (Essentially 2-dimensional distance with a grid) between any two facilities. There are n facilities.
+* An n x n array that represents the "flow" between any two facilities. The flow can be viewed as the traffic in the path. 
+These arrays are stored in the ".dat" files in a format recognized by ```load\_data\_set.py```. Numpy is used for storing 2D arrays during execution.
+
+An initial population is generated, shuffled,  and fitness scores are assigned to each member. The fitness scores are then normalised. 
+
+Fitness of an element is calculated by its ```flow * distance``` product. Flows and distances are read from the flow[] and distance[] arrays. ```distance[x, y]``` is the Manhattan distance at matrix indices x, y. The same goes for flow.
+
+Iterations are then run to select members or "chromosomes" with best fitnesses that are mutated or crossed. The population is then updated to the transformed one and the process is repeated for multiple iterations. 
+
+All settings are configurable in ```configurations.py```. 
+
 
 ### Requirements:
 * Python 3.6 or above (with pip)
