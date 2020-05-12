@@ -14,7 +14,7 @@ Data elements used:
 * An n x n array (in the dataset file) that represents the "Manhattan distance" (Essentially 2-dimensional distance with a grid) between any two facilities. There are n facilities.
 * An n x n array that represents the "flow" between any two facilities. The flow can be viewed as the traffic in the path. 
 
-These arrays are stored in the ".dat" files in a format recognized by ```load\_data\_set.py```. Numpy is used for storing 2D arrays during execution.
+These arrays are stored in the ".dat" files in a format recognized by ```load_data_set.py```. Numpy is used for storing 2D arrays during execution.
 
 An initial population is generated, shuffled,  and fitness scores are assigned to each member. The fitness scores are then normalised. 
 
