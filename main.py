@@ -9,6 +9,9 @@ import numpy as np
 import time
 import random
 
+
+print("Starting ....")
+
 # Add current path to the system PATH to import local files
 sys.path.append(os.path.join(os.path.dirname(__file__), ''))
 
